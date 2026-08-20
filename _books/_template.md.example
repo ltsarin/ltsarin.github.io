@@ -1,0 +1,29 @@
+---
+layout: book-review          # must be `book-review` — there is no `book` layout
+title: Title of the book
+author: Author or podcast host
+isbn: 9780000000000          # cover auto-fetched from Open Library; or `olid:`, or `cover: assets/img/book_covers/x.jpg`
+categories: [non-fiction]    # non-fiction / fiction / science / podcast
+tags: [genomics, philosophy]
+released: 1946               # the year it came out — NOT true/false
+started: 2026-01-15          # required: the shelf groups books by the year you STARTED
+finished: 2026-02-02         # omit while still reading
+stars: 4                     # supports halves, e.g. 4.5
+status: Finished             # one of: reading, finished, queued, interested, paused, abandoned, reread
+buy_link:                    # optional cart icon in the header
+---
+
+## The part I keep coming back to
+
+The one idea worth the whole book. Two or three paragraphs at most — this is the bit
+you'd tell someone about at dinner.
+
+## Worth remembering
+
+- A line or a claim you want to be able to find again.
+- Another one.
+
+{% details Why this one landed for me — a personal note %}
+The longer, more personal reflection. Collapsed by default so the page stays scannable;
+delete the `details` wrapper if you'd rather have it open.
+{% enddetails %}

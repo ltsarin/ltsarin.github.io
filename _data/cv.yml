@@ -1,189 +1,191 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
+  name: Lev Tsarin
+  label: Computational Biologist · Cancer Genomics & Genome Stability
+  email: tsarinlev@gmail.com
+  location: Omaha, NE, United States
   image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  summary: >
+    Computational biologist working at the intersection of cancer genomics, genome instability, and
+    molecular biology. I study how errors made by the replicative DNA polymerases shape tumour genomes and how we can detect it —
+    combining machine learning on tumour sequencing data, curation of the primary functional literature,
+    and yeast genetics to connect a variant to the phenotype it causes. First author of PolED, a curated
+    database of functional studies of POLE and POLD1 variants in humans.
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
     - network: GitHub
-      username: example
+      username: Tsarin2061
     - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+      username: tsarin-lev
 
   sections:
-    Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
-        highlights:
-          - Description 1.
-          - Description 2.
+    Academic Interests:
+      - name: Genome instability
+        icon: fa-solid fa-dna
+        keywords: "DNA replication fidelity, POLE/POLD1 proofreading, ultramutation, mismatch repair, hypermutator phenotypes"
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+      - name: Cancer genomics
+        icon: fa-solid fa-chart-simple
+        keywords: "Mutational signatures, driver vs. passenger discrimination, somatic variant interpretation, tumour stratification"
+
+      - name: Computational methods
+        icon: fa-solid fa-code
+        keywords: "Machine learning for genomics, reproducible pipelines, database and web-resource design, data visualisation"
+
+    Education:
+      - institution: University of Nebraska Medical Center
+        location: Omaha, NE, United States
+        url: https://www.unmc.edu/
+        area: Bioinformatics & Cancer Biology
+        studyType: PhD
+        start_date: 2027-08
         highlights:
-          - Description 1.
-          - Description 2.
+          - Incoming doctoral student, starting August 2027.
+          - Awarded the Ray H. Frohn Incoming Graduate Student Scholarship — 1 of 5 recipients in the 2026–27 cycle, covering the first two years of doctoral study.
+
+      - institution: Ivan Franko National University of Lviv
+        location: Lviv, Ukraine
+        url: https://lnu.edu.ua/en/
+        area: Genetics and Biotechnology
+        studyType: MSc, Genetics
+        start_date: 2022
+        end_date: 2023-12
+        highlights:
+          - "Thesis: in silico systems analysis of gene clusters for specialised metabolism in model streptomycetes."
+
+      - institution: Ivan Franko National University of Lviv
+        location: Lviv, Ukraine
+        url: https://lnu.edu.ua/en/
+        area: Biochemistry
+        studyType: BSc, Biology
+        start_date: 2018
+        end_date: 2022-06
+        highlights:
+          - "Thesis: effect of CD98–LAT1 amino acid transporter inhibition under arginine starvation in tongue carcinoma cell lines Cal-33 and SAS in vitro."
 
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: University of Nebraska Medical Center — Shcherbakova Lab
+        position: Research Scholar
+        location: Omaha, NE, United States
+        start_date: 2025-10
+        summary: >
+          Eppley Institute for Research in Cancer and Allied Diseases, Fred & Pamela Buffett Cancer Center.
         highlights:
-          - Relativity
-          - Description 2.
+          - Build machine-learning classifiers on AACR GENIE targeted-panel data to separate POLE driver from passenger mutations across sequencing panels, nominating candidate novel drivers for functional follow-up.
+          - Design biological feature sets from mutation-context data and maintain an end-to-end Python ML framework for tumour subtype classification.
+          - Curate and analyse functional evidence for POLE/POLD1 variants; develop and maintain the PolED database and web resource.
+          - Engineer yeast strains via genetic editing to assay the function of polymerase variants.
+          - Develop reproducible Snakemake pipelines for somatic variant analysis on HPC (UNMC Swan / Holland Computing Center).
+          - Contribute to manuscript and grant writing, including technical documentation.
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+      - company: PE Tsarin Lev
+        position: Bioinformatician (self-employed)
+        location: Ukraine
+        start_date: 2023-01
+        end_date: 2025-10
         highlights:
-          - Description 1.
-          - Description 2.
+          - Analysis and processing of NGS data, including Duplex Sequencing and Bulk Segregant Analysis.
+          - Built tooling for the analysis and visualisation of VCF and MAF files.
+          - Developed a script for identifying non-canonical DNA structures.
+          - Software and API development.
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+      - company: Enzym Company R&D Lab
+        position: Fermentation Scientist
+        location: Lviv, Ukraine
+        start_date: 2021-12
+        end_date: 2022-12
         highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+          - Measured key biochemical parameters in yeast-based products; PCR-based identification of microbial species and strains.
+          - Isolated microorganisms from diverse habitats and selected strains with desirable traits; microbiological contamination control.
 
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
-
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+      - company: Institute of Cell Biology, NAS of Ukraine
+        position: Undergraduate Student Researcher
+        location: Lviv, Ukraine
+        start_date: 2021-07
+        end_date: 2022-06
+        highlights:
+          - Collected and analysed experimental data using cell culturing, Western blotting, RT-PCR and MTT assays.
+          - Conducted bioinformatics analyses of tissue gene expression and patient survival data.
 
     Publications:
-      - title: Zur Elektrodynamik bewegter Körper
+      - title: "PolED: a manually curated database of functional studies of POLE and POLD1 variants reported in humans"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+          - Lev Tsarin
+          - Polina V. Shcherbakova
+        publisher: Database (Oxford), 2025;2025:baaf076
+        releaseDate: 2025-01-18
+        url: https://doi.org/10.1093/database/baaf076
+        summary: >
+          A publicly available database compiling functional evidence for clinically relevant POLE and POLD1
+          variants across biochemical assays, yeast, mammalian cells and mouse tumour models, with a concise
+          summary of functional significance for each variant.
 
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
+      - title: "Machine learning framework to identify tumors with ultramutator DNA polymerase ε variants from targeted sequencing data"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
+          - Lev Tsarin
+          - Polina V. Shcherbakova
+        publisher: Poster — 25th Annual Midwest DNA Repair Symposium, Kansas, USA
+        summary: >
+          Poster presentation on classifying ultramutated tumours from targeted panel data.
 
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+    Acknowledged Contributions:
+      - bullet: "Isakova LH et al. **Descent from a common ancestor restricts exploration of protein sequence space.** *PNAS* (2026) — model design."
+
+      - bullet: "Novikov A, Sup-Novikova M. **Endemic vascular plants in the Ukrainian Carpathians.** *Biodivers Data J* (2022) — data processing and dataset curation."
+
+    Awards:
+      - title: Ray H. Frohn Incoming Graduate Student Scholarship
+        date: 2026
+        awarder: University of Nebraska Medical Center
+        summary: One of five recipients in the 2026–27 cycle; covers the first two years of doctoral study.
+
+      - title: DAAD Bioinformatics Scholarship
+        date: 2022
+        awarder: German Academic Exchange Service (DAAD)
+        summary: Competitive scholarship, 30 places — large-scale DNA and mass spectrometry data analysis.
+
+    Teaching:
+      - bullet: "**Instructor — Genomics and Python**, Biological Data Science³ Summer School, Uzhhorod, Ukraine (2024–2025). Prepared course materials for both years and taught hands-on genomics and Python to students with a biological background (2024)."
 
     Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - name: Genomics & analysis
+        icon: fa-solid fa-dna
+        keywords: "NGS analysis, variant annotation, mutational signatures, literature and functional-evidence curation, MSA and sequence analysis, pipeline development (Snakemake), HPC"
+
+      - name: Programming
+        icon: fa-solid fa-code
+        keywords: "Python, R, JavaScript, Bash, SQL and database design (ORM, query design), API development and documentation, machine learning, data visualisation"
+
+      - name: Laboratory
+        icon: fa-solid fa-flask
+        keywords: "Yeast strain construction and genetic editing, cell culturing, nucleic acid and protein isolation, PCR, Western blotting, experimental design"
+
+    Certificates:
+      - name: B4U Data Analysis Workshop
+        date: 2023
+        issuer: University of Southern California
+        icon: fa-solid fa-chart-line
+
+      - name: "CS50P: Introduction to Programming with Python"
+        date: 2023
+        issuer: Harvard University
+        icon: fa-solid fa-terminal
+
+      - name: Biological Data Science³ Summer School
+        date: 2023
+        issuer: Uzhhorod, Ukraine — participant
+        icon: fa-solid fa-graduation-cap
 
     Languages:
-      - name: German
+      - name: Ukrainian
         summary: "Native speaker"
 
       - name: English
         summary: "Fluent"
 
+      - name: Spanish
+        summary: "Conversational"
+
     Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
-
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
-        highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - name: Outside the dry lab
+        icon: fa-solid fa-mountain-sun
+        keywords: "Year-round electric unicycle commuting, hiking, nature, exploring new places"

@@ -1,9 +1,7 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+# Maps the `abbr` field of a bibtex entry to a venue link and badge color.
+"Database":
+  url: https://academic.oup.com/database
+  color: "#0b6e4f"
 
-"PhysRev":
-  url: https://journals.aps.org/
-
-"Vision":
-  color: "#009f36"
+"Poster":
+  color: "#7a5195"
