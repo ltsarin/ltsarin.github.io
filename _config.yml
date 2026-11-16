@@ -84,7 +84,8 @@ al_folio:
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false # false = footer flows at the end of the page.
+# `true` pins it with position:fixed, which permanently covers ~53px of every phone screen.
 search_enabled: true
 socials_in_search: true
 posts_in_search: true
@@ -284,6 +285,81 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  # Applies to every book/podcast page so each one does not have to repeat it.
+  # `book-review` emits page._styles before its own <style>, so these rules are
+  # written one level more specific (.post article ...) to win the cascade.
+  - scope:
+      path: ""
+      type: "books"
+    values:
+      _styles: >
+        .post article figure > img {
+          max-width: 100%;
+          height: auto;
+        }
+
+        @media screen and (max-width: 599px) {
+          .post article figure {
+            max-width: 190px;
+            margin: 0 auto 1.5rem;
+            padding-left: 0;
+          }
+          .post article figure > img {
+            width: 100%;
+            margin: 0 auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+          }
+          .post article figure figcaption {
+            text-align: center;
+            font-size: 0.85rem;
+          }
+        }
+
+        .post article details {
+          clear: right;
+          margin: 2rem 0 0;
+          border: 1px solid var(--global-divider-color);
+          border-radius: 8px;
+          background-color: var(--global-card-bg-color);
+        }
+
+        .post article details > summary {
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+          min-height: 44px;
+          padding: 0.75rem 1.1rem;
+          cursor: pointer;
+          list-style: none;
+          font-weight: 600;
+          color: var(--global-theme-color);
+          -webkit-tap-highlight-color: transparent;
+        }
+
+        .post article details > summary::-webkit-details-marker {
+          display: none;
+        }
+
+        .post article details > summary::before {
+          content: "\203A";
+          font-size: 1.35em;
+          line-height: 1;
+          transition: transform 0.2s ease;
+        }
+
+        .post article details[open] > summary::before {
+          transform: rotate(90deg);
+        }
+
+        .post article details > summary:hover {
+          color: var(--global-hover-color);
+        }
+
+        .post article details > *:not(summary) {
+          margin: 0;
+          padding: 0 1.1rem 1.1rem;
+        }
 
 sass:
   style: compressed
@@ -522,7 +598,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
+      fonts: "https://fonts.googleapis.com/css?family=Public+Sans:300,400,500,600,700|Fira+Code:400,500,600|Material+Icons&display=swap"
   highlightjs:
     integrity:
       css:

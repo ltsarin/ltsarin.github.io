@@ -1,0 +1,145 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+/* Built-in Sass modules you'll likely use across partials */
+@use "sass:math";
+@use "sass:string";
+
+/* Configure your design tokens BEFORE loading any of your partials.
+   Make sure `_sass/_variables.scss` declares `$max-content-width: 72rem !default;` */
+@use "variables" with (
+  $max-content-width: {{ site.max_width | default:  "930px" }}
+);
+
+/* Your project partials -- convert these files to `@use "variables";`
+   (or `@use "variables" as *;`) inside each file and qualify variables if needed. */
+@use "themes";
+@use "layout";
+
+// Core styles organized by usage
+@use "typography";
+@use "navbar";
+@use "footer";
+@use "blog";
+@use "publications";
+@use "components";
+@use "utilities";
+
+// Other specialized styles
+@use "tabs";
+@use "teachings";
+@use "typograms";
+
+/*******************************************************************************
+ * SITE OVERRIDES -- monochrome palette + Public Sans / Fira Code typography.
+ *
+ * Kept here rather than in `_sass/_themes.scss` (which docs/CUSTOMIZE.md suggests)
+ * for two reasons:
+ *   1. `test/style_contract.js` hard-fails if a `_sass/` directory exists at all.
+ *      `assets/css/` is not on its forbidden-path list, so this stays CI-green.
+ *   2. Redefining the `--global-*` custom properties after `@use "themes"` beats
+ *      the gem's `:root` block on source order alone, so only the ~30 tokens that
+ *      actually change live here instead of a 208-line copy that would silently
+ *      drift from upstream.
+ *
+ * Body font: the gem bakes `body{font-family:Roboto,sans-serif}` into
+ * tailwind.css, which head.liquid loads BEFORE main.css. Equal specificity,
+ * later source position, so the rule below wins without !important.
+ ******************************************************************************/
+
+:root {
+  --global-bg-color: #f8f8f0;
+  --global-code-bg-color: rgba(74, 74, 74, 0.05);
+  --global-text-color: #2a2a2a;
+  --global-text-color-light: #6a6a6a;
+  --global-theme-color: #4a4a4a;
+  --global-hover-color: #1e1e1e;
+  --global-hover-text-color: #f8f8f0;
+  --global-footer-bg-color: #2a2a2a;
+  --global-footer-text-color: #b8b8b8;
+  --global-footer-link-color: #f8f8f0;
+  --global-distill-app-color: #6a6a6a;
+  --global-divider-color: rgba(0, 0, 0, 0.1);
+  --global-card-bg-color: #ffffff;
+  --global-highlight-color: #2a2a2a;
+  --global-back-to-top-bg-color: rgba(42, 42, 42, 0.45);
+  --global-back-to-top-text-color: #f8f8f0;
+  --global-newsletter-bg-color: #ffffff;
+  --global-newsletter-text-color: #2a2a2a;
+
+  /* Design tokens for the homepage sections (used by _pages/about.md). */
+  --site-font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --site-font-brand: "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --site-surface: #ffffff;
+  --site-surface-alt: #f0f0e8;
+  --site-border: rgba(0, 0, 0, 0.12);
+  --site-lift: -2px;
+  --site-sweep: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  --site-radius: 0.5rem;
+  --site-shadow: 0 1px 2px rgba(9, 11, 17, 0.04), 0 4px 12px rgba(9, 11, 17, 0.05);
+  --site-shadow-hover: 0 2px 4px rgba(9, 11, 17, 0.06), 0 12px 28px rgba(9, 11, 17, 0.1);
+}
+
+html[data-theme="dark"] {
+  --global-bg-color: #181818;
+  --global-code-bg-color: #202020;
+  --global-text-color: #e8e8e8;
+  --global-text-color-light: #909090;
+  --global-theme-color: #a0a0a0;
+  --global-hover-color: #e8e8e8;
+  --global-hover-text-color: #181818;
+  --global-footer-bg-color: #121212;
+  --global-footer-text-color: #909090;
+  --global-footer-link-color: #e8e8e8;
+  --global-distill-app-color: #909090;
+  --global-divider-color: rgba(255, 255, 255, 0.12);
+  --global-card-bg-color: #1e1e1e;
+  --global-highlight-color: #e8e8e8;
+  --global-back-to-top-bg-color: rgba(232, 232, 232, 0.45);
+  --global-back-to-top-text-color: #181818;
+  --global-newsletter-bg-color: #1e1e1e;
+  --global-newsletter-text-color: #e8e8e8;
+
+  --site-surface: #1e1e1e;
+  --site-surface-alt: #202020;
+  --site-border: rgba(255, 255, 255, 0.14);
+  --site-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+  --site-shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.5), 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+body {
+  font-family: var(--site-font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--site-font-brand);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+/* Navbar brand + links pick up the mono face, matching the reference's nav. */
+.navbar .navbar-brand,
+.navbar .nav-link {
+  font-family: var(--site-font-brand);
+  font-weight: 500;
+}
+
+/* Squared-off controls; the gem's buttons are pill-rounded. */
+.btn,
+.navbar .nav-link {
+  border-radius: 0;
+}
+
+/* Gem bug fix: al_folio_core's tailwind.css hardcodes `.table{color:#212529}`,
+   which never adapts to dark mode. The news list on the homepage is a `.table`,
+   so its text renders near-black on the dark background. Worth porting upstream
+   to al_folio_core; kept here so this site reads correctly now. */
+.table {
+  color: var(--global-text-color);
+}
